@@ -14,7 +14,7 @@ const initialTodos = [
     {
         id: 3,
         text: 'Context 만들기',
-        done: false,
+        done: true,
     },
     {
         id: 4,
@@ -68,7 +68,7 @@ export function useTodoState() {
 
     return context;
 }
-export function useTodoDispatchContext() {
+export function useTodoDispatch() {
     const context =  useContext(TodoDispatchContext);
 
     if(!context) {
