@@ -61,11 +61,27 @@ export function TodoProvider({children}) {
 
 // 커스텀 Hook 만들기
 export function useTodoState() {
-    return useContext(TodoStateContext);
+    const context = useContext(TodoStateContext);
+    if(!context) {
+        throw new Error('Cannot find TodoProvider');
+    }
+
+    return context;
 }
 export function useTodoDispatchContext() {
-    return useContext(TodoDispatchContext);
+    const context =  useContext(TodoDispatchContext);
+
+    if(!context) {
+        throw new Error('Cannot find TodoDispatchContext');
+    }
+
+    return context;
 }
 export function useTodoNextId() {
-    return useContext(TodoNextIdContext);
+    const context =  useContext(TodoNextIdContext);
+    if(!context) {
+        throw new Error('Cannot find TodoNextIdContext');
+    }
+
+    return context;
 }
